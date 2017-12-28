@@ -1,0 +1,11 @@
+Package: ggdc
+Title: DataCamp Themes for ggplot2.
+Version: 0.1
+Authors@R: c(
+  person("Ramnath", "Vaidyanathan", email = "ramnath@datacamp.com", role = c("aut", "cre"))
+ )
+Description: DataCamp Themes for ggplot2
+Depends: R (>= 3.4.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
