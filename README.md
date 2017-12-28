@@ -25,6 +25,6 @@ ggplot(mtcars, aes(x = mpg, y = wt, color = as.factor(vs))) +
   ggdc::theme_datacamp()
 ```
 
-![Datacamp Theme](https://imgur.com/Fb4Lrv5)
+![Datacamp Theme](https://imgur.com/Fb4Lrv5.png)
 
 
