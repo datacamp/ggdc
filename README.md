@@ -4,8 +4,20 @@ Datacamp Themes for ggplot2.
 
 ## Installation
 
+You can install the package from github using `devtools`.
+
 ```r
 devtools::install_github("datacamp/ggdc")
+```
+
+## Setup
+
+You will need to set up Lato fonts before you can use this pacakge. You can do this by by running the following lines of code.
+
+```r
+library(ggdc)
+install_lato()
+extrafont::loadfonts(quiet = TRUE)
 ```
 
 ## Usage
