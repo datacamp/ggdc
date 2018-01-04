@@ -1,6 +1,6 @@
 # ggdc
 
-Datacamp Themes for ggplot2.
+This package provides Datacamp themes for ggplot2 based on the [style guide](http://styleguide.datacamp.com/).
 
 ## Installation
 
