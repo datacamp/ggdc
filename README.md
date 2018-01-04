@@ -22,6 +22,8 @@ extrafont::loadfonts(quiet = TRUE)
 
 ## Usage
 
+__Example 1__
+
 ```r
 library(ggplot2)
 ggplot(mtcars, aes(x = mpg, y = wt, color = as.factor(vs))) +
@@ -39,4 +41,19 @@ ggplot(mtcars, aes(x = mpg, y = wt, color = as.factor(vs))) +
 
 ![Datacamp Theme](https://imgur.com/Fb4Lrv5.png)
 
+__Example 2__
 
+```r
+diamonds_s = diamonds[diamonds$color %in% LETTERS[4:7],]
+ggplot(diamonds_s, aes(x = carat, fill = color)) +
+  geom_histogram(bins = 30) +
+  labs(
+    title = "Distribution of Carats by Color",
+    x = 'Carats',
+    y = 'Frequency'
+  ) +
+  theme_datacamp() +
+  scale_fill_manual(values = dc_pal())
+```
+
+![Filled Histogram](https://imgur.com/peDSPRK.png)
