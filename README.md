@@ -12,7 +12,7 @@ devtools::install_github("datacamp/ggdc")
 
 ## Setup
 
-You will need to set up Lato fonts before you can use this pacakge. You can do this by by running the following lines of code.
+You will need to set up Lato fonts before you can use this pacakge. This requires installation of the `extrafont` package and setting up the font databases appropriately. Once you have `extrafont` installed, you can install Lato fonts as shown below.
 
 ```r
 library(ggdc)
@@ -20,7 +20,16 @@ install_lato()
 extrafont::loadfonts(quiet = TRUE)
 ```
 
+You will need to do this only once, to set up the fonts.
+
 ## Usage
+
+Now that you have the fonts set up, you can start using this package rightaway. There are two key functions: 
+
+1. `theme_datacamp`: Theme a plot using DataCamp style guide.
+2. `dc_pal`: Provides access to different color palettes from the style guide.
+
+The examples below will help you get started using this package!
 
 __Example 1__
 
@@ -57,3 +66,4 @@ ggplot(diamonds_s, aes(x = carat, fill = color)) +
 ```
 
 ![Filled Histogram](https://imgur.com/peDSPRK.png)
+
