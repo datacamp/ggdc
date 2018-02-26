@@ -4,7 +4,12 @@
 \alias{dc_pal}
 \title{DataCamp Color Palettes}
 \usage{
-dc_pal(name = c("accents", "greys", "accents_light"), named = F)
+dc_pal(name = c("accents", "greys", "accents_light"), named = FALSE)
+}
+\arguments{
+\item{name}{Which of three palettes to choose}
+
+\item{named}{Whether the vector should be named}
 }
 \description{
 DataCamp Color Palettes

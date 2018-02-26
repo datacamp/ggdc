@@ -1,6 +1,10 @@
 #' DataCamp Color Palettes
+#'
+#' @param name Which of three palettes to choose
+#' @param named Whether the vector should be named
+#'
 #' @export
-dc_pal <- function(name = c("accents", "greys", "accents_light"), named = F){
+dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE) {
   name <- match.arg(name)
   greys <- c(
     dark_grey = "#3D4251",

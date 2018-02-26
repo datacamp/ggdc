@@ -19,13 +19,13 @@ import_lato <- function() {
   lato_font_dir <- system.file("fonts", "lato", package="ggdc")
 
   suppressWarnings(suppressMessages(
-    extrafont::font_import(rc_font_dir, prompt=FALSE))
+    extrafont::font_import(lato_font_dir, prompt=FALSE))
   )
 
   message(
     sprintf(
       "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
-      rc_font_dir
+      lato_font_dir
     )
   )
 }
