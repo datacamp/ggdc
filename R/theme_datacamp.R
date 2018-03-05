@@ -48,14 +48,14 @@ dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE)
 #'   ) +
 #'   theme_datacamp()
 theme_datacamp <- function(){
-  theme(
-    legend.position = 'bottom',
-    text = element_text(color = "#686F75", family = "Lato"),
-    plot.title = element_text(color = "#3d4251", face = 'bold', size = 16),
-    plot.subtitle = element_text(color = "#859094", size = 12),
-    panel.background = element_rect(fill = "#EBF4F7"),
-    strip.background = element_rect(fill = '#33AACC'),
-    strip.text = element_text(colour = 'white', face = 'bold')
-  )
+  theme_light() +
+    theme(
+      legend.position = 'bottom',
+      text = element_text(color = "#686F75", family = "Lato"),
+      plot.title = element_text(color = "#3d4251", face = 'bold', size = 16),
+      plot.subtitle = element_text(color = "#859094", size = 12),
+      panel.background = element_rect(fill = "#EBF4F7"),
+      strip.background = element_rect(fill = '#33AACC'),
+      strip.text = element_text(colour = 'white', face = 'bold')
+    )
 }
-
