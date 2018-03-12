@@ -22,7 +22,7 @@ dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE)
   )
   accents_light <- c(
     light_green = "#A5ECC5",
-    light_red = "#E86F70",
+    light_red = "#FFB5B5",
     orange = "#ff9400",
     purple = "#8468C4"
   )
