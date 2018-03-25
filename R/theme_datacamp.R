@@ -47,8 +47,8 @@ dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE)
 #'     y = "Weight"
 #'   ) +
 #'   theme_datacamp()
-theme_datacamp <- function(){
-  theme_light() +
+theme_datacamp <- function(...){
+  theme_light(...) +
     theme(
       legend.position = 'bottom',
       text = element_text(color = "#686F75", family = "Lato"),
