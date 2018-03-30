@@ -34,6 +34,10 @@ dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE)
 #'
 #' @export
 #' @import ggplot2
+#'
+#' @param ... Extra arguments (eg base_size) to pass to theme_light, which is
+#' the theme that theme_datacamp is built off of. For example
+#'
 #' @examples
 #' library(ggplot2)
 #' ggplot(mtcars, aes(x = mpg, y = wt, color = as.factor(vs))) +
