@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+.title-slide h1 {
+  font-size: 36px;
+  padding-bottom: 20px;
+}
+.title-slide h3 {
+  font-size: 24px;
+}
+h1, h2, h3 {
+  font-family: Lato;
+  font-weight: normal;
+}
+body{
+  font-family: Lato;
+}
+.title-slide {
+  background-image: url(datacamp-background.svg);
+  background-size: cover;
+}
+.remark-slide-content:not(.title-slide):not(.center) {
+  background-image: url(dc-slide-header.png);
+  background-position: top;
+}
+.remark-slide-content:not(.title-slide):not(.center)  > h1 {
+  margin-top: -15px;
+  font-size: 24px;
+  margin-left: -60px;
+  color: white;
+  padding-bottom: 20px;
+}

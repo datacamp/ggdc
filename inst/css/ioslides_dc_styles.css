@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.title-slide {
+  background-image: url(datacamp-background.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title-slide hgroup{
+  bottom: 225px;
+}
+
+.title-slide hgroup p {
+  color: white;
+}
+
+.title-slide hgroup h1 {
+  color: white;
+  letter-spacing: 0;
+  font-family: Lato;
+  font-size: 48px;
+}
+
+slides > slide {
+  font-family: Lato;
+  line-height: 1.625;
+}
+
+slide:not(.fill):not(.segue) h2 {
+  letter-spacing: 0;
+  font-size: 24px;
+  color: white;
+}
+
+article.dark h2 {
+  color: white;
+}
+
+article.no-top-margin {
+  margin-top: 0px;
+}
+
+slides > slide.dark {
+  background: #515151 !important;
+}
+
+/* remove backdrop at bottom of the slide */
+slides > slide.backdrop {
+  background-image: url(dc-slide-header.png);
+  background-size: 100% 40px;
+  background-repeat: no-repeat;
+}
+
+/* combine these two into one */
+slide:not(.fill):not(.title-slide) > hgroup {
+  margin-top: -55px;
+  margin-left: -40px;
+}
+
+/*
+slide[data-slide-num="5"]{
+  background-image: linear-gradient(268deg,#405f8f,#1c3050)!important;
+}
+*/
+
+div.footnotes {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: 80%;
+  font-size: 0.6em;
+}
+
+article.h3-purple h3 {
+  color: #8468c4;
+}
