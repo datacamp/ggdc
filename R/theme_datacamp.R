@@ -34,6 +34,7 @@ dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE)
 #'
 #' @export
 #' @import ggplot2
+#' @param ... Additional parameters to pass to \code{theme_gray}
 #' @examples
 #' library(ggplot2)
 #' ggplot(mtcars, aes(x = mpg, y = wt, color = as.factor(vs))) +
@@ -47,13 +48,13 @@ dc_pal <- function(name = c("accents", "greys", "accents_light"), named = FALSE)
 #'     y = "Weight"
 #'   ) +
 #'   theme_datacamp()
-theme_datacamp <- function(){
-  theme_gray() +
+theme_datacamp <- function(...){
+  theme_gray(...) +
     theme(
       legend.position = 'bottom',
       text = element_text(color = "#686F75", family = "Lato"),
-      plot.title = element_text(color = "#3d4251", face = 'bold', size = 16),
-      plot.subtitle = element_text(color = "#859094", size = 12),
+      plot.title = element_text(color = "#3d4251", face = 'bold'),
+      plot.subtitle = element_text(color = "#859094"),
       panel.background = element_rect(fill = "#EBF4F7"),
       strip.background = element_rect(fill = '#33AACC'),
       strip.text = element_text(colour = 'white', face = 'bold')
