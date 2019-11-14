@@ -4,7 +4,10 @@
 \alias{theme_datacamp}
 \title{DataCamp Theme}
 \usage{
-theme_datacamp()
+theme_datacamp(...)
+}
+\arguments{
+\item{...}{Additional parameters to pass to \code{theme_gray}}
 }
 \description{
 DataCamp Theme
