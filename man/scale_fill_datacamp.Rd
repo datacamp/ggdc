@@ -4,8 +4,7 @@
 \alias{scale_fill_datacamp}
 \title{Fill scale constructor for drsimonj colors}
 \usage{
-scale_fill_datacamp(palette = "accents", discrete = TRUE,
-  reverse = FALSE, ...)
+scale_fill_datacamp(palette = "accents", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in drsimonj_palettes}

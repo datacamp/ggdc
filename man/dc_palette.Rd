@@ -4,7 +4,7 @@
 \alias{dc_palette}
 \title{Return function to interpolate a datacamp color palette}
 \usage{
-dc_palette(palette = "main", reverse = FALSE, ...)
+dc_palette(palette = "accents", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in dc_palettes()}
