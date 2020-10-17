@@ -50,3 +50,25 @@ install_lato <- function(){
     extrafont::font_import(font_dir, prompt = FALSE))
   )
 }
+
+
+#' Use Poppins font for use in plots
+#'
+#'
+#' @export
+use_poppins <- function(){
+  if (.Platform$OS.type != "windows"){
+    font_dir_system <- '~/Library/Fonts'
+  }
+  font_dir <- system.file('fonts', 'poppins', package = 'ggdc')
+  if (!any(grepl('poppins', list.files(font_dir_system)))){
+    message("Copying Poppins font files to ", font_dir_system)
+    font_files <- list.files(font_dir, full.names = TRUE)
+    for (font_file in font_files){
+      file.copy(font_file, font_dir_system)
+    }
+  }
+  suppressWarnings(suppressMessages(
+    extrafont::font_import(font_dir, prompt = FALSE))
+  )
+}
