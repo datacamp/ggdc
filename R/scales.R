@@ -35,13 +35,13 @@
 #' @param ... Character names of datacamp colors
 #' @export
 dc_colors <- function(...) {
-  data(dc_colors_all, package = 'ggdc')
+  data(dc_colors_new, package = 'ggdc')
   cols <- c(...)
 
   if (is.null(cols))
-    return (dc_colors_all)
+    return (dc_colors_new)
 
-  dc_colors_all[cols]
+  dc_colors_new[cols]
 }
 
 #' Datacamp color palettes
@@ -49,12 +49,19 @@ dc_colors <- function(...) {
 #' @export
 dc_palettes <- list(
     greys = dc_colors(
-      'grey_lighter',  'grey_light', 'geyser', 'grey_oslo', 'grey', 'grey_dark'
+      'grey100',  'grey200', 'grey300', 'grey400'
+    ),
+    accents = dc_colors(
+      'green',  'orange', 'blue', 'red', 'navy', 'pink', 'purple'
     ),
     accents_light = dc_colors(
-      'green_light', 'red_light', 'orange', 'purple_light'
+      'greenLight',  'orangeLight', 'blueLight', 'redLight',
+      'navyLight', 'pinkLight', 'purpleLight'
     ),
-    accents = dc_colors('green', 'red', 'orange_dark', 'purple_dark')
+    accents_dark = dc_colors(
+      'greenDark',  'orangeDark', 'blueDark', 'redDark',
+      'navyDark', 'pinkDark', 'purpleDark'
+    )
 )
 
 
@@ -64,7 +71,7 @@ dc_palettes <- list(
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #' @export
-dc_palette <- function(palette = "main", reverse = FALSE, ...) {
+dc_palette <- function(palette = "accents", reverse = FALSE, ...) {
   pal <- dc_palettes[[palette]]
 
   if (reverse) pal <- rev(pal)
