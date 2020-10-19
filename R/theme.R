@@ -132,7 +132,7 @@ theme_datacamp_dark <- function(base_size = 11,
 
 
 
-
+#' @export
 finalize_plot <- function(p, bg = NULL, logo_scale = 1) {
   m <- ggplot_build(p)
   if (is.null(bg)){
