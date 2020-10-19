@@ -177,7 +177,7 @@ finalize_plot <- function(p, bg = NULL, logo_scale = 1) {
   )
 }
 
-dc_set_chunk_opts <- function(finalize_plot = FALSE){
+dc_set_chunk_opts <- function(finalize_plot = FALSE, fancy_box = FALSE){
   width_final <- 1500
   dpi <- 300
   aspect_ratio <- 1.
@@ -203,23 +203,33 @@ dc_set_chunk_opts <- function(finalize_plot = FALSE){
     if (finalize_plot){
       assignInNamespace("print.ggplot", finalize_plot, asNamespace("ggplot2"))
     }
-
-    knitr::knit_hooks$set(
-      plot = function(x, options) {
-        cap <- options$fig.cap # figure caption
-        tags <- htmltools::tags
-        as.character(tags$figure(
-          if (!is.null(options$fig.fancybox) && options$fig.fancybox) {
-            tags$a(
-              href = x, `data-fancybox` = "",
+    if (fancy_box){
+      knitr::knit_hooks$set(
+        plot = function(x, options) {
+          cap <- options$fig.cap # figure caption
+          tags <- htmltools::tags
+          as.character(tags$figure(
+            if (!is.null(options$fig.fancybox) && options$fig.fancybox) {
+              tags$a(
+                href = x, `data-fancybox` = "",
+                tags$img(src = x, alt = cap)
+              )
+            } else {
               tags$img(src = x, alt = cap)
-            )
-          } else {
-            tags$img(src = x, alt = cap)
-          },
-          tags$figcaption(cap)
-        ))
-      }
-    )
+            },
+            tags$figcaption(cap)
+          ))
+        }
+      )
+    }
   }
+}
+
+#' Install DataCamp theme for RStudio
+#'
+#'
+#' @export
+install_rstudio_theme <- function(){
+  theme <- system.file('themes', 'datacamp.tmTheme', package = 'ggdc')
+  rstudioapi::addTheme(theme, apply = TRUE, force = TRUE)
 }
