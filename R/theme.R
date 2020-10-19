@@ -177,7 +177,7 @@ finalize_plot <- function(p, bg = NULL, logo_scale = 1) {
   )
 }
 
-dc_set_chunk_opts <- function(){
+dc_set_chunk_opts <- function(finalize_plot = FALSE){
   width_final <- 1500
   dpi <- 300
   aspect_ratio <- 1.
@@ -200,7 +200,9 @@ dc_set_chunk_opts <- function(){
       dpi = 300,
       fig.fancybox = TRUE
     )
-    assignInNamespace("print.ggplot", finalize_plot, asNamespace("ggplot2"))
+    if (finalize_plot){
+      assignInNamespace("print.ggplot", finalize_plot, asNamespace("ggplot2"))
+    }
 
     knitr::knit_hooks$set(
       plot = function(x, options) {

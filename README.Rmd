@@ -31,9 +31,9 @@ You can install the package from github using `devtools`.
 devtools::install_github("datacamp/ggdc")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+## Light Theme
 
 ```{r example_1}
 library(ggdc)
@@ -42,7 +42,8 @@ p <- diamonds %>%
   geom_point(alpha = 0.6) +
   labs(
     title = "Price vs. Carat",
-    subtitle = 'Weightier diamonds are more expensive'
+    subtitle = 'Weightier diamonds are more expensive',
+    caption = 'Source: Diamonds dataset'
   ) +
   scale_color_datacamp(palette = 'accents_light')
 
@@ -50,13 +51,25 @@ p +
   theme_datacamp_light()
 ```
 
-```{r example_2}
-p + theme_datacamp_dark()
+### Dark Theme
+
+```{r dark-theme}
+p + 
+  theme_datacamp_dark()
 ```
 
-## Example 2
 
-```{r example-3}
+### Logo
+
+You can add a logo to the plot using `finalize_plot`. You can make this the default by adding `dc_set_chunk_opts(finalize_plot = TRUE)` in the setup chunk.
+
+```{r}
+finalize_plot(p + theme_datacamp_dark())
+```
+
+### Facets
+
+```{r example-facets}
 diamonds %>% 
   ggplot(aes(x = price)) +
   geom_histogram() +
@@ -68,4 +81,7 @@ diamonds %>%
   theme_datacamp_light() +
   scale_fill_datacamp()
 ```
+
+
+
 

@@ -16,9 +16,9 @@ You can install the package from github using `devtools`.
 devtools::install_github("datacamp/ggdc")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+## Light Theme
 
 ``` r
 library(ggdc)
@@ -27,7 +27,8 @@ p <- diamonds %>%
   geom_point(alpha = 0.6) +
   labs(
     title = "Price vs. Carat",
-    subtitle = "Weightier diamonds are more expensive"
+    subtitle = "Weightier diamonds are more expensive",
+    caption = "Source: Diamonds dataset"
   ) +
   scale_color_datacamp(palette = "accents_light")
 
@@ -42,18 +43,38 @@ p +
 </figcaption>
 </figure>
 
+### Dark Theme
+
 ``` r
-p + theme_datacamp_dark()
+p +
+  theme_datacamp_dark()
 ```
 
 <figure>
-<a href="man/figures/README-example_2-1.png" data-fancybox="">
-<img src="man/figures/README-example_2-1.png"/> </a>
+<a href="man/figures/README-dark-theme-1.png" data-fancybox="">
+<img src="man/figures/README-dark-theme-1.png"/> </a>
 <figcaption>
 </figcaption>
 </figure>
 
-## Example 2
+### Logo
+
+You can add a logo to the plot using `finalize_plot`. You can make this
+the default by adding `dc_set_chunk_opts(finalize_plot = TRUE)` in the
+setup chunk.
+
+``` r
+finalize_plot(p + theme_datacamp_dark())
+```
+
+<figure>
+<a href="man/figures/README-unnamed-chunk-1-1.png" data-fancybox="">
+<img src="man/figures/README-unnamed-chunk-1-1.png"/> </a>
+<figcaption>
+</figcaption>
+</figure>
+
+### Facets
 
 ``` r
 diamonds %>%
@@ -69,8 +90,8 @@ diamonds %>%
 ```
 
 <figure>
-<a href="man/figures/README-example-3-1.png" data-fancybox="">
-<img src="man/figures/README-example-3-1.png"/> </a>
+<a href="man/figures/README-example-facets-1.png" data-fancybox="">
+<img src="man/figures/README-example-facets-1.png"/> </a>
 <figcaption>
 </figcaption>
 </figure>
