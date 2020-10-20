@@ -4,8 +4,12 @@
 \alias{scale_color_datacamp}
 \title{Color scale constructor for datacamp colors}
 \usage{
-scale_color_datacamp(palette = "accents", discrete = TRUE,
-  reverse = FALSE, ...)
+scale_color_datacamp(
+  palette = "accents",
+  discrete = TRUE,
+  reverse = FALSE,
+  ...
+)
 }
 \arguments{
 \item{palette}{Character name of palette in dc_palettes()}

@@ -1,69 +1,109 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # ggdc
 
-This package provides Datacamp themes for ggplot2 based on the [style guide](http://styleguide.datacamp.com/).
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of ggdc is to provides Datacamp themes for ggplot2, rstudio,
+and other document formats.
 
 ## Installation
 
 You can install the package from github using `devtools`.
 
-```r
+``` r
 devtools::install_github("datacamp/ggdc")
 ```
 
-## Setup
+## Plotting Theme
 
-You will need to set up Lato fonts before you can use this pacakge. This requires installation of the `extrafont` package and setting up the font databases appropriately. Once you have `extrafont` installed, you can install Lato fonts as shown below.
+`ggdc` supports two variants of the datacamp theme (light and dark).
 
-```r
+## Light Theme
+
+``` r
 library(ggdc)
-install_lato()
-extrafont::loadfonts(quiet = TRUE)
-```
-
-You will need to do this only once, to set up the fonts.
-
-## Usage
-
-Now that you have the fonts set up, you can start using this package rightaway. There are two key functions: 
-
-1. `theme_datacamp`: Theme a plot using DataCamp style guide.
-2. `dc_pal`: Provides access to different color palettes from the style guide.
-
-The examples below will help you get started using this package!
-
-__Example 1__
-
-```r
-library(ggplot2)
-ggplot(mtcars, aes(x = mpg, y = wt, color = as.factor(vs))) +
-  geom_point() +
-  facet_wrap(~ gear) +
-  scale_color_manual(name = 'VS', values = dc_pal()) +
+p <- diamonds %>%
+  ggplot(aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.6) +
   labs(
-    title = 'Mileage vs. Weight by Gears',
-    subtitle = "Automobile Data (mtcars)",
-    x = "Miles per Gallon",
-    y = "Weight"
+    title = "Price vs. Carat",
+    subtitle = "Weightier diamonds are more expensive",
+    caption = "Source: Diamonds dataset"
   ) +
-  ggdc::theme_datacamp()
+  scale_color_datacamp(palette = "accents_light")
+
+p +
+  theme_datacamp_light()
 ```
 
-![Datacamp Theme](https://imgur.com/Fb4Lrv5.png)
+<figure>
+<a href="man/figures/README-example_1-1.png" data-fancybox="">
+<img src="man/figures/README-example_1-1.png"/> </a>
+<figcaption>
+</figcaption>
+</figure>
 
-__Example 2__
+### Dark Theme
 
-```r
-diamonds_s = diamonds[diamonds$color %in% LETTERS[4:7],]
-ggplot(diamonds_s, aes(x = carat, fill = color)) +
-  geom_histogram(bins = 30) +
+``` r
+p +
+  theme_datacamp_dark()
+```
+
+<figure>
+<a href="man/figures/README-dark-theme-1.png" data-fancybox="">
+<img src="man/figures/README-dark-theme-1.png"/> </a>
+<figcaption>
+</figcaption>
+</figure>
+
+### Logo
+
+You can add a logo to the plot using `finalize_plot`. You can make this
+the default for all plots in an Rmd by adding
+`dc_set_chunk_opts(finalize_plot = TRUE)` in the setup chunk.
+
+``` r
+finalize_plot(p + theme_datacamp_dark())
+```
+
+<figure>
+<a href="man/figures/README-unnamed-chunk-1-1.png" data-fancybox="">
+<img src="man/figures/README-unnamed-chunk-1-1.png"/> </a>
+<figcaption>
+</figcaption>
+</figure>
+
+### Facets
+
+``` r
+diamonds %>%
+  ggplot(aes(x = price)) +
+  geom_histogram() +
+  facet_wrap(~cut, scales = "free_y") +
   labs(
-    title = "Distribution of Carats by Color",
-    x = 'Carats',
-    y = 'Frequency'
+    title = "Histogram of Diamonds Prices",
+    caption = "Source: ggplot2"
   ) +
-  theme_datacamp() +
-  scale_fill_manual(values = dc_pal())
+  theme_datacamp_light() +
+  scale_fill_datacamp()
 ```
 
-![Filled Histogram](https://imgur.com/peDSPRK.png)
+<figure>
+<a href="man/figures/README-example-facets-1.png" data-fancybox="">
+<img src="man/figures/README-example-facets-1.png"/> </a>
+<figcaption>
+</figcaption>
+</figure>
 
+## Rstudio Theme
+
+`ggdc` also ships with a syntax highlighting theme for RStudio. You can
+install it by running
+
+``` r
+install_rstheme()
+```

@@ -4,7 +4,9 @@
 \name{dc_palettes}
 \alias{dc_palettes}
 \title{Datacamp color palettes}
-\format{An object of class \code{list} of length 3.}
+\format{
+An object of class \code{list} of length 4.
+}
 \usage{
 dc_palettes
 }
