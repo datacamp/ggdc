@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ggdc is to provides Datacamp themes for ggplot2.
+The goal of ggdc is to provides Datacamp themes for ggplot2, rstudio,
+and other document formats.
 
 ## Installation
 
@@ -16,7 +17,9 @@ You can install the package from github using `devtools`.
 devtools::install_github("datacamp/ggdc")
 ```
 
-## Examples
+## Plotting Theme
+
+`ggdc` supports two variants of the datacamp theme (light and dark).
 
 ## Light Theme
 
@@ -60,8 +63,8 @@ p +
 ### Logo
 
 You can add a logo to the plot using `finalize_plot`. You can make this
-the default by adding `dc_set_chunk_opts(finalize_plot = TRUE)` in the
-setup chunk.
+the default for all plots in an Rmd by adding
+`dc_set_chunk_opts(finalize_plot = TRUE)` in the setup chunk.
 
 ``` r
 finalize_plot(p + theme_datacamp_dark())
@@ -95,3 +98,12 @@ diamonds %>%
 <figcaption>
 </figcaption>
 </figure>
+
+## Rstudio Theme
+
+`ggdc` also ships with a syntax highlighting theme for RStudio. You can
+install it by running
+
+``` r
+install_rstheme()
+```
