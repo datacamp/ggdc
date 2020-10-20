@@ -44,24 +44,19 @@ dc_colors <- function(...) {
   dc_colors_new[cols]
 }
 
+
+.accents = dc_colors(
+  'green', 'orange', 'blue', 'red', 'pink', 'purple'
+)
+
 #' Datacamp color palettes
 #'
 #' @export
 dc_palettes <- list(
-    greys = dc_colors(
-      'grey100',  'grey200', 'grey300', 'grey400'
-    ),
-    accents = dc_colors(
-      'green',  'orange', 'blue', 'red', 'navy', 'pink', 'purple'
-    ),
-    accents_light = dc_colors(
-      'greenLight',  'orangeLight', 'blueLight', 'redLight',
-      'navyLight', 'pinkLight', 'purpleLight'
-    ),
-    accents_dark = dc_colors(
-      'greenDark',  'orangeDark', 'blueDark', 'redDark',
-      'navyDark', 'pinkDark', 'purpleDark'
-    )
+  greys = dc_colors('grey100',  'grey200', 'grey300', 'grey400'),
+    accents = .accents,
+    accents_light = paste0(.accents, 'Light'),
+    accents_dark = paste0(.accents, 'Dark')
 )
 
 
