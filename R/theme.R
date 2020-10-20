@@ -7,8 +7,8 @@ theme_datacamp_light <- function(base_size = 11,
                            subtitle_family = "Poppins Light",
                            base_line_size = base_size/22,
                            base_rect_size = base_size/22,
-                           fill_plot = "#f7f3eb",
-                           fill_panel = fill_plot,
+                           fill_panel = "#f7f3eb",
+                           fill_plot = fill_panel,
                            fill_strip = dc_colors_new$yellow,
                            color_geom = '#444444',
                            color_text = '#222222',
@@ -229,7 +229,7 @@ dc_set_chunk_opts <- function(finalize_plot = FALSE, fancy_box = FALSE){
 #'
 #'
 #' @export
-install_rstudio_theme <- function(){
+install_rstheme <- function(){
   theme <- system.file('themes', 'datacamp.tmTheme', package = 'ggdc')
   rstudioapi::addTheme(theme, apply = TRUE, force = TRUE)
 }
