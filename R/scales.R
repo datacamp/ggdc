@@ -45,6 +45,7 @@ dc_colors <- function(...) {
 }
 
 
+.accent_colors <- c('green', 'orange', 'blue', 'red', 'pink', 'purple')
 .accents = dc_colors(
   'green', 'orange', 'blue', 'red', 'pink', 'purple'
 )
@@ -55,8 +56,8 @@ dc_colors <- function(...) {
 dc_palettes <- list(
   greys = dc_colors('grey100',  'grey200', 'grey300', 'grey400'),
     accents = .accents,
-    accents_light = paste0(.accents, 'Light'),
-    accents_dark = paste0(.accents, 'Dark')
+    accents_light = do.call(dc_colors, as.list(paste0(.accent_colors, 'Light'))),
+    accents_dark =do.call(dc_colors, as.list(paste0(.accent_colors, 'Dark')))
 )
 
 
